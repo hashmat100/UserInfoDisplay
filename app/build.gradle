@@ -26,8 +26,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-//    used for network services
+    //  used for network services
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    // viewmddel and livedata
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+
 }
