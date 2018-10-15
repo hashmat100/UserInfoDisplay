@@ -9,6 +9,7 @@ import java.lang.reflect.ParameterizedType;
 
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -20,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public abstract class HttpClient<T> {
 
     private static final int CACHE_SIZE = 1 * 1024 * 1024; // 1 MB
-    private static final String CACHE_SUB_PATH = "okhttpfacts";
+    private static final String CACHE_SUB_PATH = "okhttpuserinfo";
 
     private Retrofit mRetrofit;
     private T mAPI;
@@ -33,8 +34,13 @@ public abstract class HttpClient<T> {
         File cacheDir = new File(mContext.getCacheDir(), CACHE_SUB_PATH);
         Cache cache = new Cache(cacheDir, CACHE_SIZE);
 
+        // for debugging
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.HEADERS);
+
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .cache(cache)
+//                .addInterceptor(loggingInterceptor)
                 .build();
 
         mRetrofit = new Retrofit.Builder()
