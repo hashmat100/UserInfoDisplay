@@ -1,9 +1,12 @@
-package com.sample11.main;
+package com.sample11.main.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.sample11.main.R;
+import com.sample11.main.base.BaseActivity;
+
+
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
