@@ -2,6 +2,7 @@ package com.sample11.main.base;
 
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
 /**
@@ -27,6 +28,16 @@ public class BaseActivity extends AppCompatActivity {
                 .add(containerViewId, fragment, fragment.getClass().getName())
                 .addToBackStack(fragment.getClass().getName())
                 .commitAllowingStateLoss();
+    }
+
+    protected BaseFragment getFragmentByTag(String name) {
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag(name);
+
+        if (fragment instanceof BaseFragment) {
+            return (BaseFragment) fragment;
+        } else {
+            return null;
+        }
     }
 
 }

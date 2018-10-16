@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">UserInfoDisplay</string>
+    <string name="userInfo">User Info</string>
+    <string name="idPrefix">ID: %s</string>
+    <string name="namePrefix">Name: %s</string>
+    <string name="emailPrefix">Email: %s</string>
+    <string name="phonePrefix">Phone: %s</string>
+
 </resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="userInfo"
+            type="com.sample11.main.network.GetUserInfoVO" />
+
+        <variable
+            name="itemClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ripple_tile_item"
+        android:clickable="true"
+        android:onClick="@{itemClickListener}"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/idTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ellipsize="end"
+            android:text="@{@string/idPrefix(String.valueOf(userInfo.id))}"
+            android:textColor="@color/tileItemText"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/nameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:ellipsize="end"
+            android:text="@{@string/namePrefix(userInfo.name)}"
+            android:textColor="@color/tileItemText"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/emailTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:autoLink="email"
+            android:ellipsize="end"
+            android:linksClickable="false"
+            android:text="@{@string/emailPrefix(userInfo.email)}"
+            android:textColor="@color/tileItemText"
+            android:textColorLink="@color/tileItemText"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/phoneTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:ellipsize="end"
+            android:text="@{@string/namePrefix(userInfo.phone)}"
+            android:textColor="@color/tileItemText"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+</layout>

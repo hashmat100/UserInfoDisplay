@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="titleMain">#0e0d0d</color>
+    <color name="tileItemText">#ffffff</color>
+    <color name="tileItemBackground">#0815d4</color>
 </resources>
