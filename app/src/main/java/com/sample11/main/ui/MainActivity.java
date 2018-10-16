@@ -27,11 +27,10 @@ public class MainActivity extends BaseActivity {
     public void onBackPressed() {
         int fragments = getSupportFragmentManager().getBackStackEntryCount();
 
-        if (fragments == 1) {
-            finish();
-            return;
+        if (fragments > 1) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
         }
-
-        super.onBackPressed();
     }
 }

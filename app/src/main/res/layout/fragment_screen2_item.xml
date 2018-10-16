@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="albumInfo"
+            type="com.sample11.main.network.GetAlbumInfoVO" />
+
+        <variable
+            name="itemClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:tag="@{albumInfo}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/tileItemBackground"
+        android:orientation="horizontal"
+        android:paddingBottom="12dp"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="12dp">
+
+        <ImageView
+            android:id="@+id/albumThumbIV"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="15dp"
+            android:clickable="true"
+            android:onClick="@{itemClickListener}"
+            app:loadUrl="@{albumInfo.thumbnailUrl}" />
+
+        <TextView
+            android:id="@+id/albumImageTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:text="@{albumInfo.title}"
+            android:textColor="@color/tileItemText"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+</layout>

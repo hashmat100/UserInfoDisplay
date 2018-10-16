@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 
 import com.sample11.main.R;
 import com.sample11.main.base.BaseFragment;
-import com.sample11.main.log.Log;
 import com.sample11.main.network.GetUserInfoVO;
 import com.sample11.main.viewmodel.UserInfoViewModel;
 
@@ -24,14 +23,25 @@ import java.util.List;
  */
 public class Screen1Fragment extends BaseFragment {
 
-    RecyclerView mUserInfoRV;
+    private RecyclerView mUserInfoRV;
 
     private final Observer<List<GetUserInfoVO>> mObserver = new Observer<List<GetUserInfoVO>>() {
         @Override
         public void onChanged(@Nullable List<GetUserInfoVO> userList) {
-            Log.debug(userList.get(0).getPhone());
+            //Log.debug(userList.get(0).getPhone());
 
-            UserInfoRVAdapter adapter = new UserInfoRVAdapter(userList);
+            //populate recycler view on data reception
+            UserInfoRVAdapter adapter = new UserInfoRVAdapter(userList, new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int id = (int) v.getTag();
+                    Screen2Fragment frag = Screen2Fragment.newInstance();
+                    Bundle args = new Bundle();
+                    args.putInt(Const.KEY_ID, id);
+                    frag.setArguments(args);
+                    addFragment(R.id.mainContainer, frag);
+                }
+            });
             mUserInfoRV.setAdapter(adapter);
             mUserInfoRV.setHasFixedSize(true);
             adapter.notifyDataSetChanged();

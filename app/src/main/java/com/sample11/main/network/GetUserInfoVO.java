@@ -10,7 +10,7 @@ import com.sample11.main.BR;
  * Class to store json info from get user info API
  * (Getters/Setters added only to the required fields now)
  */
-public class GetUserInfoVO extends BaseObservable{
+public class GetUserInfoVO extends BaseObservable {
 
     private int id;
     private String name;

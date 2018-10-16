@@ -8,52 +8,49 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.sample11.main.R;
 import com.sample11.main.BR;
-import com.sample11.main.network.GetUserInfoVO;
+import com.sample11.main.R;
+import com.sample11.main.network.GetAlbumInfoVO;
 
 import java.util.List;
 
 /**
  * Created by Ashmath Khan on 16-10-2018.
  */
-public class UserInfoRVAdapter extends RecyclerView.Adapter<UserInfoRVAdapter.ViewHolder> {
+public class AlbumInfoRVAdapter extends RecyclerView.Adapter<AlbumInfoRVAdapter.ViewHolder> {
 
-    private List<GetUserInfoVO> mUserInfoList;
+    private List<GetAlbumInfoVO> mAlbumInfoList;
     private View.OnClickListener mOnClickListener;
 
-    public UserInfoRVAdapter(List<GetUserInfoVO> userInfoList, View.OnClickListener onClickListener) {
-        mUserInfoList = userInfoList;
-        mOnClickListener = onClickListener;
+    public AlbumInfoRVAdapter(List<GetAlbumInfoVO> albumInfoList, View.OnClickListener listener) {
+        mAlbumInfoList = albumInfoList;
+        mOnClickListener = listener;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
+    public AlbumInfoRVAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(
-                R.layout.fragment_screen1_item, viewGroup, false);
+                R.layout.fragment_screen2_item, viewGroup, false);
 
-        return new ViewHolder(v);
+        return new AlbumInfoRVAdapter.ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull AlbumInfoRVAdapter.ViewHolder viewHolder, int i) {
 
-        GetUserInfoVO userInfo = mUserInfoList.get(i);
-        viewHolder.getViewDataBinding().setVariable(BR.userInfo, userInfo);
+        GetAlbumInfoVO albumInfo = mAlbumInfoList.get(i);
+        viewHolder.getViewDataBinding().setVariable(BR.albumInfo, albumInfo);
         viewHolder.getViewDataBinding().setVariable(BR.itemClickListener, mOnClickListener);
-        //viewHolder.itemView.setTag(userInfo.getId());
         viewHolder.getViewDataBinding().executePendingBindings();
     }
 
     @Override
     public int getItemCount() {
-        return mUserInfoList.size();
+        return mAlbumInfoList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         private ViewDataBinding viewDataBinding;
 
         public ViewHolder(View view) {
