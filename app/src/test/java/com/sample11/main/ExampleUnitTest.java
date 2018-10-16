@@ -1,5 +1,7 @@
 package com.sample11.main;
 
+import com.sample11.main.network.UserInfoHttpClient;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
