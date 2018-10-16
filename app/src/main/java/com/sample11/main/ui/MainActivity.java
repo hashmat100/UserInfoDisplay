@@ -30,7 +30,7 @@ public class MainActivity extends BaseActivity {
         if (fragments > 1) {
             getSupportFragmentManager().popBackStack();
         } else {
-            super.onBackPressed();
+            finish();
         }
     }
 }

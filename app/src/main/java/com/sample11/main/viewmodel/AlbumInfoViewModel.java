@@ -32,7 +32,7 @@ public class AlbumInfoViewModel extends AndroidViewModel {
     public LiveData<List<GetAlbumInfoVO>> getAlbumInfoList() {
 
         if (albumInfoList == null) {
-            albumInfoList = new MutableLiveData<List<GetAlbumInfoVO>>();
+            albumInfoList = new MutableLiveData<>();
             loadAlbumInfoList();
         }
 

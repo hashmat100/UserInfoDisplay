@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="albumInfo"
+            type="com.sample11.main.network.GetAlbumInfoVO" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/startEndMargin"
+        android:layout_marginEnd="@dimen/startEndMargin"
+        android:layout_marginStart="@dimen/startEndMargin"
+        android:layout_marginTop="@dimen/startEndMargin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.5"
+            android:gravity="center_vertical"
+            android:text="@{@string/albumHeader(String.valueOf(albumInfo.albumId))}"
+            android:textColor="@color/titleMain"
+            android:textSize="@dimen/headerTextSize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.5"
+            android:gravity="center_vertical"
+            android:text="@{@string/photoHeader(String.valueOf(albumInfo.id))}"
+            android:textColor="@color/titleMain"
+            android:textSize="@dimen/headerTextSize" />
+
+        <ImageView
+            android:id="@+id/albumThumbIV"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="5"
+            app:loadUrl="@{albumInfo.url}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1.5"
+            android:background="@color/tileItemBackground"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="3"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:text="@{albumInfo.title}"
+            android:textColor="@color/tileItemText"
+            android:textSize="@dimen/tileTextSize" />
+
+
+    </LinearLayout>
+</layout>

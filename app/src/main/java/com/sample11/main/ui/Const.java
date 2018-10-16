@@ -7,4 +7,5 @@ public class Const {
     static final String KEY_URL = "url";
     static final String KEY_TITLE = "title";
     static final String KEY_ID = "id";
+    static final String KEY_ALBUMINFO_JSON = "albumInfoVo";
 }

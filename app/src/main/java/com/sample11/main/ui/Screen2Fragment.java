@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.sample11.main.R;
 import com.sample11.main.base.BaseFragment;
 import com.sample11.main.log.Log;
@@ -21,6 +22,7 @@ import com.sample11.main.viewmodel.AlbumInfoViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.sample11.main.ui.Const.KEY_ALBUMINFO_JSON;
 import static com.sample11.main.ui.Const.KEY_ID;
 
 /**
@@ -49,16 +51,20 @@ public class Screen2Fragment extends BaseFragment {
                 public void onClick(View v) {
                     if (v.getParent() instanceof ViewGroup &&
                             ((ViewGroup) v.getParent()).getTag() instanceof GetAlbumInfoVO) {
+
                         GetAlbumInfoVO vo = (GetAlbumInfoVO) ((ViewGroup) v.getParent()).getTag();
+
+                        Bundle args = new Bundle();
+                        Gson gson = new Gson();
+                        String json = gson.toJson(vo);
+                        args.putString(KEY_ALBUMINFO_JSON, json);
+
+                        Screen3Fragment frag = Screen3Fragment.newInstance();
+                        frag.setArguments(args);
+                        addFragment(R.id.mainContainer, frag);
                     } else {
                         Log.error("type error");
                     }
-//                    Screen2Fragment frag = Screen2Fragment.newInstance();
-//                    Bundle args = new Bundle();
-//                    args.putString(KEY_URL, matchingList.get(index).getUrl());
-//                    args.putString(KEY_TITLE, matchingList.get(index).getTitle());
-//                    frag.setArguments(args);
-//                    addFragment(R.id.mainContainer, frag);
                 }
             });
             mAlbumInfoRV.setAdapter(adapter);

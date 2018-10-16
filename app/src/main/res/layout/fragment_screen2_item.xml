@@ -14,18 +14,17 @@
     </data>
 
     <LinearLayout
-        android:tag="@{albumInfo}"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:background="@color/tileItemBackground"
         android:orientation="horizontal"
         android:paddingBottom="12dp"
         android:paddingEnd="12dp"
         android:paddingStart="12dp"
-        android:paddingTop="12dp">
+        android:paddingTop="12dp"
+        android:tag="@{albumInfo}">
 
         <ImageView
             android:id="@+id/albumThumbIV"
@@ -39,12 +38,13 @@
         <TextView
             android:id="@+id/albumImageTV"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_height="match_parent"
             android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="4"
             android:text="@{albumInfo.title}"
             android:textColor="@color/tileItemText"
-            android:textSize="20dp" />
+            android:textSize="@dimen/tileTextSize" />
 
     </LinearLayout>
 

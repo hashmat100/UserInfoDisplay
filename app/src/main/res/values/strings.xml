@@ -5,6 +5,7 @@
     <string name="namePrefix">Name: %s</string>
     <string name="emailPrefix">Email: %s</string>
     <string name="phonePrefix">Phone: %s</string>
-    <string name="albumHeader">Album: %s</string>
+    <string name="albumHeader">Album ID: %s</string>
+    <string name="photoHeader">Photo ID: %s</string>
 
 </resources>

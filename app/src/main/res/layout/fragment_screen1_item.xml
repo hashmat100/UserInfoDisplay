@@ -34,9 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:ellipsize="end"
+            android:singleLine="true"
             android:text="@{@string/idPrefix(String.valueOf(userInfo.id))}"
             android:textColor="@color/tileItemText"
-            android:textSize="20dp" />
+            android:textSize="@dimen/tileTextSize" />
 
         <TextView
             android:id="@+id/nameTV"
@@ -44,9 +45,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:ellipsize="end"
+            android:singleLine="true"
             android:text="@{@string/namePrefix(userInfo.name)}"
             android:textColor="@color/tileItemText"
-            android:textSize="20dp" />
+            android:textSize="@dimen/tileTextSize" />
 
         <TextView
             android:id="@+id/emailTV"
@@ -56,6 +58,7 @@
             android:autoLink="email"
             android:ellipsize="end"
             android:linksClickable="false"
+            android:singleLine="true"
             android:text="@{@string/emailPrefix(userInfo.email)}"
             android:textColor="@color/tileItemText"
             android:textColorLink="@color/tileItemText"
@@ -67,6 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:ellipsize="end"
+            android:singleLine="true"
             android:text="@{@string/namePrefix(userInfo.phone)}"
             android:textColor="@color/tileItemText"
             android:textSize="20dp" />
