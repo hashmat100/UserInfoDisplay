@@ -42,7 +42,11 @@ public class UserInfoViewModel extends AndroidViewModel {
         UserInfoHttpClient.getInstance(getApplication()).getUserInfo(new BaseListener<List<GetUserInfoVO>>() {
             @Override
             public void onResponse(List<GetUserInfoVO> response) {
-                userInfoList.setValue(response);
+                if (response != null) {
+                    userInfoList.setValue(response);
+                } else {
+                    Log.error("response null");
+                }
             }
 
             @Override

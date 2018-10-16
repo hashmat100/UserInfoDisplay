@@ -100,6 +100,7 @@ public class Screen2Fragment extends BaseFragment {
         mAlbumInfoRV = view.findViewById(R.id.albumInfoRV);
         mAlbumInfoRV.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        // get id from previous screen
         Bundle args = getArguments();
         if (args != null) {
             userId = args.getInt(KEY_ID);

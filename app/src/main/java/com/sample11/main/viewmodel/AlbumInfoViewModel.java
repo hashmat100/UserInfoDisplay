@@ -44,7 +44,11 @@ public class AlbumInfoViewModel extends AndroidViewModel {
         AlbumInfoHttpClient.getInstance(getApplication()).getAlbumInfo(new BaseListener<List<GetAlbumInfoVO>>() {
             @Override
             public void onResponse(List<GetAlbumInfoVO> response) {
-                albumInfoList.setValue(response);
+                if (response != null) {
+                    albumInfoList.setValue(response);
+                } else {
+                    Log.error("response null");
+                }
             }
 
             @Override

@@ -26,6 +26,7 @@ public class Screen3Fragment extends BaseFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        // get vo from previous screen
         GetAlbumInfoVO vo = null;
         Bundle args = getArguments();
         if (args != null && args.getString(KEY_ALBUMINFO_JSON) != null) {

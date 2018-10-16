@@ -27,6 +27,7 @@ public class MainActivity extends BaseActivity {
     public void onBackPressed() {
         int fragments = getSupportFragmentManager().getBackStackEntryCount();
 
+        //exit if back pressed on first fragment
         if (fragments > 1) {
             getSupportFragmentManager().popBackStack();
         } else {
