@@ -14,7 +14,7 @@ import retrofit2.Call;
 public class UserInfoHttpClient extends HttpClient<UserInfoAPI> {
 
     private static UserInfoHttpClient mHttpClient;
-    private static final String BASE_URL = "https://jsonplaceholder.typicode.com/users/";
+    private static final String BASE_URL = "https://jsonplaceholder.typicode.com/";
 
     private UserInfoHttpClient(Context appContext) {
         super(appContext);
@@ -37,6 +37,12 @@ public class UserInfoHttpClient extends HttpClient<UserInfoAPI> {
     public void getUserInfo(BaseListener<List<GetUserInfoVO>> baseListener) {
         BaseCallback callback = new BaseCallback(baseListener);
         Call<List<GetUserInfoVO>> call = getAPI().getUserInfo();
+        call.enqueue(callback);
+    }
+
+    public void getAlbumInfo(BaseListener<List<GetAlbumInfoVO>> baseListener) {
+        BaseCallback callback = new BaseCallback(baseListener);
+        Call<List<GetAlbumInfoVO>> call = getAPI().getAlbumInfo();
         call.enqueue(callback);
     }
 

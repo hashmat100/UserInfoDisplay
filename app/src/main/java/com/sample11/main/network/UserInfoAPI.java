@@ -10,6 +10,9 @@ import retrofit2.http.GET;
  */
 
 public interface UserInfoAPI {
-    @GET(".")
+    @GET("users/")
     Call<List<GetUserInfoVO>> getUserInfo();
+
+    @GET("photos/")
+    Call<List<GetAlbumInfoVO>> getAlbumInfo();
 }

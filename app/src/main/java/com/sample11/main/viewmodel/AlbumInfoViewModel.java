@@ -11,9 +11,9 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.sample11.main.log.Log;
-import com.sample11.main.network.AlbumInfoHttpClient;
 import com.sample11.main.network.BaseListener;
 import com.sample11.main.network.GetAlbumInfoVO;
+import com.sample11.main.network.UserInfoHttpClient;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public class AlbumInfoViewModel extends AndroidViewModel {
 
     // load userInfoList using retrofit from server
     private void loadAlbumInfoList() {
-        AlbumInfoHttpClient.getInstance(getApplication()).getAlbumInfo(new BaseListener<List<GetAlbumInfoVO>>() {
+        UserInfoHttpClient.getInstance(getApplication()).getAlbumInfo(new BaseListener<List<GetAlbumInfoVO>>() {
             @Override
             public void onResponse(List<GetAlbumInfoVO> response) {
                 if (response != null) {
