@@ -18,28 +18,32 @@
         android:layout_marginTop="@dimen/startEndMargin"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:layout_weight="0.5"
-            android:gravity="center_vertical"
-            android:text="@{@string/albumHeader(String.valueOf(albumInfo.albumId))}"
-            android:textColor="@color/titleMain"
-            android:textSize="@dimen/headerTextSize" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="0.5"
-            android:gravity="center_vertical"
-            android:text="@{@string/photoHeader(String.valueOf(albumInfo.id))}"
-            android:textColor="@color/titleMain"
-            android:textSize="@dimen/headerTextSize" />
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{@string/albumHeader(String.valueOf(albumInfo.albumId))}"
+                android:textColor="@color/titleMain"
+                android:textSize="@dimen/headerTextSize" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{@string/photoHeader(String.valueOf(albumInfo.id))}"
+                android:textColor="@color/titleMain"
+                android:textSize="@dimen/headerTextSize" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/albumThumbIV"
