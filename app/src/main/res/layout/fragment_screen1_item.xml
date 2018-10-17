@@ -62,7 +62,7 @@
             android:text="@{@string/emailPrefix(userInfo.email)}"
             android:textColor="@color/tileItemText"
             android:textColorLink="@color/tileItemText"
-            android:textSize="20dp" />
+            android:textSize="@dimen/tileTextSize" />
 
         <TextView
             android:id="@+id/phoneTV"
@@ -71,9 +71,9 @@
             android:layout_gravity="start"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="@{@string/namePrefix(userInfo.phone)}"
+            android:text="@{@string/phonePrefix(userInfo.phone)}"
             android:textColor="@color/tileItemText"
-            android:textSize="20dp" />
+            android:textSize="@dimen/tileTextSize" />
 
     </LinearLayout>
 
